@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zarinadaqrious Studio | Heaven Anjali Y. Marquez</title>
+    <style>
+       
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            background-color: #fdf8ee; /* Warm cream background from PDF */
+            color: #5c4338; /* Warm dark brown text */
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            /* Soft pastel swirl border effect on the left */
+            background-image:url("images/background-image.jpg");
+            background-size: cover; 
+            background-position: center; 
+            background-repeat: no-repeat;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 6%;
+            background-color: #fdf8ee;
+            border-bottom:  2px dashed #e6d5c3;
+            background-image: url(images/header-footer-bg.jpg);
+        }
+
+        .logo {
+            text-align: center;
+            color: #6b4c3e;
+            letter-spacing: 1px;
+        }
+
+        .logo-main {
+            display: block;
+            font-size: 1.15rem;
+            font-weight: bold;
+            color: #fdf8ee ;
+        }
+
+        .logo-sub {
+            display: block;
+            font-size: 0.75rem;
+            letter-spacing: 3px;
+            margin-top: 2px;
+            color: #fdf8ee;
+        }
+
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            gap: 28px;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fdf8ee;
+            font-family: 'Trebuchet MS', sans-serif;
+            font-size: 0.95rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+            padding: 8px 14px;
+            border-radius: 20px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        nav ul li a:hover,
+        nav ul li a.active {
+            background-color: #f7c5d8;
+            color: #d90256;
+        }
+
+        main {
+            flex: 1;
+            max-width: 1050px;
+            width: 90%;
+            margin: 30px auto;
+        }
+
+        section {
+            margin-bottom: 50px;
+            padding: 30px;
+            background-color: #fffcf5;
+            border: 2px solid #f0e2d0;
+            border-radius: 24px;
+            box-shadow: 0 6px 18px rgba(107, 76, 62, 0.06);
+        }
+
+        h1 {
+            font-family: 'Trebuchet MS', 'Comic Sans MS', sans-serif;
+            font-size: 2.3rem;
+            color: #5c4338;
+            letter-spacing: 1.5px;
+            margin-bottom: 18px;
+            text-transform: uppercase;
+            color: #fa829f;
+        }
+
+        h2 {
+            font-family: 'Trebuchet MS', sans-serif;
+            font-size: 1.25rem;
+            color: #7a5547;
+            margin-top: 18px;
+            margin-bottom: 8px;
+        }
+
+        p {
+            font-size: 1.05rem;
+            margin-bottom: 16px;
+            color: #5c4338;
+            text-align: justify;
+        }
+
+        /* =========================================
+           4. IMAGES & ARTWORK CARDS
+           ========================================= */
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 22px;
+            border: 4px solid #f7c5d8;
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+            display: block;
+        }
+
+        .hero-grid {
+            display: flex;
+            align-items: center;
+            gap: 35px;
+        }
+
+        .hero-image {
+            flex: 0 0 310px;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .artwork-showcase {
+         width: 100%;
+         overflow: hidden;
+         /* Optional: Fades the left and right edges */
+         mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent)
+        }
+
+        .artworks {
+            display: flex;
+            width: max-content;
+            gap: 20px;
+            animation: scroll-horizontal 15s linear infinite;
+        }
+
+        .artwork-showcase :hover .slider-track {
+          animation-play-state: paused;
+        }
+
+        .artworks img {
+         width: 250px;
+         height: 150px;
+         background: #4f46e5;
+         color: white;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         font-size: 1.5rem;
+         border-radius: 12px;
+         flex-shrink: 0;
+        }
+
+        @keyframes scroll-horizontal {
+          0% { transform: translateX(0);}
+         100% {transform: translateX(calc(-50% - 10px)); }
+        }
+
+        .caption-note {
+            font-size: 0.85rem;
+            font-style: italic;
+            color: #8c6d5e;
+            margin-top: 8px;
+            text-align: center;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 15px;
+        }
+
+        main ul,
+        main ol {
+            margin-left: 24px;
+            margin-bottom: 18px;
+        }
+
+        main ul li,
+        main ol li {
+            margin-bottom: 8px;
+            font-size: 1rem;
+            color: #5c4338;
+        }
+
+        main ul {
+            list-style-type: disc;
+        }
+
+        main ol {
+            list-style-type: decimal;
+        }
+
+        .social-box {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 2px dashed #e6d5c3;
+        }
+
+        .social-box img {
+            width: 210px;
+            border-color: #fde08d;
+        }
+
+        main a {
+            color: #c95b85;
+            font-weight: bold;
+            text-decoration: underline;
+            transition: color 0.2s ease;
+        }
+
+        main a:hover {
+            color: #4f94bd;
+            background-color: #fdf0f5;
+            border-radius: 4px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+            color: #6b4c3e;
+            background-color: #f9efe1;
+            border-top: 2px dashed #e6d5c3;
+            margin-top: auto;
+            background-image: url(images/header-footer-bg.jpg);
+        }
+
+        footer p {
+            text-align: center;
+            margin: 0;
+            font-size: 0.9rem;
+            color:#fdf8ee;
+        }
+
+        @media screen and (max-width: 768px) {
+            body {
+                border-left-width: 8px;
+            }
+
+            header {
+                flex-direction: column;
+                gap: 15px;
+                padding: 20px 4%;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+
+            .hero-grid,
+            .social-box {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-image {
+                flex: none;
+                max-width: 260px;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            h1 {
+                font-size: 1.75rem;
+                text-align: center;
+            }
+
+            p {
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <span class="logo-main">ZARINADAQRIOUS</span>
+            <span class="logo-sub">STUDIO</span>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="#home" class="active">HOME</a></li>
+                <li><a href="#my-works">MY WORKS</a></li>
+                <li><a href="#my-services">MY SERVICES</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <section id="home">
+            <div class="hero-grid">
+                <div class="hero-image">
+                    
+                    <img src="https://uploads.onecompiler.io/4544jzkwt/1795744933069/11473.jpg" alt="Heaven Anjali Y. Marquez Cartoonify Portrait">
+                </div>
+
+                <div class="hero-text">
+                    <h1>HEAVEN DRAWS!</h1>
+                    <p>
+                        Hi! I'm Heaven Anjali Y. Marquez from BSCS 1-2, also known online as <strong>zarina_daqrious</strong>, and I love to draw. Art has been a part of me for as long as I can remember—nothing makes me happier than bringing ideas to life and sharing my creativity with others. After a friend encouraged me to start an art account, I was amazed to see so many people connect with my style.
+                    </p>
+                    <p>
+                        That support inspired me to open commissions, and getting my very first client was a dream come true—doing what I love while creating something special for someone else. Welcome to my website portfolio! Feel free to look around, and if you'd like to bring your own ideas to life, my commissions are open. :)
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="my-works">
+            <h1>MY ARTWORKS</h1>
+            <p>
+                Here are some of the artworks I'm proudest of! My style leans toward cartoony and anime-inspired art, filled with whimsical concepts and bright, vibrant colors. I love creating pieces that reflect my jolly and bubbly personality—because for me, every drawing is a little piece of who I am. Take a look around and enjoy! :)
+            </p>
+
+            <div class="artwork-showcase">
+                <div class="artworks">
+                    <img src="images/aztheris.jpg" alt="Artwork 1">
+                    <img src="images/person.jpg" alt="Artwork 2">
+                    <img src="images/graduate.jpg" alt="Artwork 3">
+                    <img src="images/fourth.jpg" alt="Artwork 4">
+                    <img src="images/someone.jpg" alt="Artwork 5">
+                    <!-- Repeat the first image at the end for a seamless loop -->
+                   <img src="images/aztheris.jpg" alt="Artwork 1">
+                </div>
+           </div>
+
+            </div>
+        </section>
+
+        <section id="my-services">
+            <h1>MY SERVICES!</h1>
+            <p>
+                If you like my artworks and you want to commission me, here are my prices and step-by-step instructions!
+            </p>
+
+            <div class="services-grid">
+                <div>
+                    <h2>Commission Type:</h2>
+                    <ul>
+                        <li>Chibi / Icon: ₱50.00 - ₱100.00</li>
+                        <li>Headshot / Bust Up: ₱100.00 - ₱200.00</li>
+                        <li>Half-body (Waist-up): ₱200.00 - ₱350.00</li>
+                        <li>Full-body: ₱350.00 - ₱500.00</li>
+                    </ul>
+
+                    <h2>Background &amp; Add-ons:</h2>
+                    <ul>
+                        <li>Transparent: Free</li>
+                        <li>Simple Scenery (clouds, sparkles, room props): ₱50.00 - ₱150.00</li>
+                        <li>Detailed environment (full room, fantasy landscape): ₱100.00 - ₱200.00</li>
+                        <li>Complex details: ₱60.00 - ₱100.00</li>
+                        <li>Rush fee: +25%, if the client wants it before a tight deadline</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h2>How to commission me:</h2>
+                    <ol>
+                        <li>Go to my Instagram account</li>
+                        <li>Message me: "Hello, I would like to commission you"</li>
+                        <li>You'll receive an order form</li>
+                        <li>Fill up the order form and submit</li>
+                    </ol>
+                    <p>And you're all done! We can chat for more details :)</p>
+                </div>
+            </div>
+
+            <div class="social-box">
+                <div>
+                    <h2>Here are my social media platforms:</h2>
+                    <ul>
+                        <li>Instagram: <a href="https://www.instagram.com/zarinadaqrious?jplx=MTRiOTAxY3AzdG1sdg==" target="_blank" rel="noopener noreferrer">@zarina_daqrious</a></li>
+                        <li>Facebook: <a href="https://web.facebook.com/heaven.marquez.319/" target="_blank" rel="noopener noreferrer">Heaven Marquez</a></li>
+                        <li>X: <a href="https://x.com/IATG_HM" target="_blank" rel="noopener noreferrer">@IATG_HM</a></li>
+                    </ul>
+                </div>
+                <img src="https://uploads.onecompiler.io/4544jzkwt/1795745209972/11403.png"alt="Chibi Mascot Holding Camera">
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Heaven Anjali Y. Marquez. All rights reserved.</p>
+    </footer>
+
+    </body>
+</html>
